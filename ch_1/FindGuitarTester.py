@@ -1,4 +1,7 @@
 from enum import Enum
+from guitar import Guitar
+from inventory import Inventory
+
 
 class Type(Enum):
 	"""
@@ -10,6 +13,9 @@ class Type(Enum):
 	def to_string(self):
 		return ACOUSTIC.Title() , ELECTRIC.Title()
 
+	def __repr__(self):
+		return "{} or {}".format(ACOUSTIC.Title() , ELECTRIC.Title())
+
 
 class Builder(Enum):
     FENDER = "FENDER"
@@ -18,6 +24,9 @@ class Builder(Enum):
 
     def to_string(self):
     	return FENDER.Title, GIBSON.Title(), MARTIN.Title()
+
+    def __repr__(self):
+    	return "{}, {}, or {}".format(FENDER.Title, GIBSON.Title(), MARTIN.Title())
 
 class Wood(Enum):
 	CEDAR = "CEDAR"
@@ -28,10 +37,36 @@ class Wood(Enum):
 	def to_string(self):
 		return CEDAR.Title() , ALDER.Title() , COCOBOLO.Title(), MAPLE.Title() 
 
+	def __repr__(self):
+		return "{}, {}, {}, or {}".format(CEDAR.Title() , ALDER.Title() , COCOBOLO.Title(), MAPLE.Title())
+
 
 class FindGuitarTester:
-	def __init__(self, **kwargs):
+	def __init__(self):
+		self.inv = Inventory()
 
-		inventory = Inventory()
-		initializeInventory(inventory)
-		new = Guitar(**kwargs)
+	def main(self):
+		"""
+		The objective is to search for gts
+		"""
+		##self.initialize_inventory()
+		new_guitar = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		guitar = self.inv.search_guitar(new_guitar)
+		return self.inv.display_guitar(guitar) if guitar else "Not Found"
+
+	def initialize_inventory(self):
+		guitar_1 = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		guitar_2 = Guitar("V95693", 1499.95,Builder.FENDER,"Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		guitar_3 = Guitar("V95123", 1543.95,Builder.FENDER,"sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		guitar_4 = Guitar("V54312", 1249.95,Builder.FENDER,"sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		self.inv.add_guitar(guitar_1)
+		self.inv.add_guitar(guitar_2)
+		self.inv.add_guitar(guitar_3)
+		self.inv.add_guitar(guitar_4)
+
+		return self.inv.display_guitar()
+
+obj = FindGuitarTester()
+obj.initialize_inventory()
+print("------------------------------------------------Test main----------------------------------------")
+obj.main()

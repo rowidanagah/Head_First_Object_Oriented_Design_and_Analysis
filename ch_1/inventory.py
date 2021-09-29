@@ -18,12 +18,12 @@ class Inventory:
 		for i in range(len(gtrs_list)):
 			print("Guitar :", i+1)
 			print("serial number:", gtrs_list[i].serialnumber)
-			print("builder version = ", gtrs_list[i].builder)
-			print("type = ", gtrs_list[i].type_of)
-			print("backwood = ", gtrs_list[i].backwood)
-			print("topWood = ", gtrs_list[i].topwood)
 			print("price = ", gtrs_list[i].price)
-			##print("num of strings = ", gtrs_list[i].guitar_spec.num_strings)
+			print("builder version = ", gtrs_list[i].spec.builder)
+			print("type = ", gtrs_list[i].spec.type_of)
+			print("backwood = ", gtrs_list[i].spec.backwood)
+			print("topWood = ", gtrs_list[i].spec.topwood)
+			print("num of strings = ", gtrs_list[i].spec.num_strings)
 
 	def get_guitar(self, serialnumber):
 		for gt in self.guitars_lst:
@@ -45,7 +45,13 @@ class Inventory:
 				guitars_found.append(gt)  
 		return guitars_found
 
-	def match(self, gt , customer_gt):
+
+	def match(self, gt_1 , customer_gt_2):
+		"""
+		OMG!, i do implemented this func before read the end of this ch and read about 
+		Delegation.
+		"""
+		gt , customer_gt = gt_1.get_spec(), customer_gt_2.get_spec()
 		if gt.get_builder() != customer_gt.get_builder():
 			return None
 		

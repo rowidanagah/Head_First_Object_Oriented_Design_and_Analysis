@@ -1,5 +1,5 @@
 from enum import Enum
-from guitar import Guitar
+from guitar import Guitar, GuitarSpace
 from inventory import Inventory
 
 
@@ -50,14 +50,14 @@ class FindGuitarTester:
 		The objective is to search for gts
 		"""
 		##self.initialize_inventory()
-		new_guitar = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		new_guitar = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER,12)
 		guitar = self.inv.search_guitar(new_guitar)
 		return self.inv.display_guitar(guitar) if guitar else "Not Found"
 
 	def initialize_inventory(self):
-		guitar_1 = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
-		guitar_2 = Guitar("V95693", 1499.95,Builder.FENDER,"Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
-		guitar_3 = Guitar("V95123", 1543.95,Builder.FENDER,"sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+		guitar_1 = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER,12)
+		guitar_2 = Guitar("V95693", 1499.95,Builder.FENDER,"Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER,12)
+		guitar_3 = Guitar("V95123", 1543.95,Builder.FENDER,"sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER,12)
 		guitar_4 = Guitar("V54312", 1249.95,Builder.FENDER,"sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
 		self.inv.add_guitar(guitar_1)
 		self.inv.add_guitar(guitar_2)

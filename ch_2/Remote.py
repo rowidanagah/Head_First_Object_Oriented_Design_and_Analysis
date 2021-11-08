@@ -1,4 +1,6 @@
 from DogDoor import DogDoor
+from time import sleep
+
 
 class Remote:
 	"""
@@ -16,6 +18,7 @@ class Remote:
 			self.door.Close()
 		else :
 			self.door.Open()
+			
 
 """
 dorr = DogDoor()

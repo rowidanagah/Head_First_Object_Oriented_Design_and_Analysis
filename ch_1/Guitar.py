@@ -37,6 +37,6 @@ class Guitar:
 	## Setters
 	def set_backwood(self , price):
 		self.price = price
-
-#new_guitar = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
-#print(new_guitar.get_type())
+"""
+new_guitar = Guitar("",0,Builder.FENDER, "Sratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER)
+print(new_guitar.get_type())"""

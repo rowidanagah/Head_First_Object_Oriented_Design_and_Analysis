@@ -14,8 +14,8 @@ class Inventory:
 			in ase of we need to displa the whole guitars that we have
 			"""
 			gtrs_list = self.guitars_lst
-
-		for i in range(len(gtrs_list)):
+		n = len(gtrs_list)
+		for i in range(n):
 			print("Guitar :", i+1)
 			print("serial number:", gtrs_list[i].serialnumber)
 			print("price = ", gtrs_list[i].price)

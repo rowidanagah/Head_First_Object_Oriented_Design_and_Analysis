@@ -5,7 +5,7 @@ from inventory import Inventory
 
 class Type(Enum):
 	"""
-	This class is created to get rid of this annoying string comparssion.
+	This class is created to get rid of and ditch this annoying string comparssion.
 	"""
 	COUSTIC = "ACOUSTIC"
 	ELECTRIC = "ELECTRIC"

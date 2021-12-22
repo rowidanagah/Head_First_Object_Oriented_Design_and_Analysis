@@ -1,10 +1,11 @@
-
 from time import sleep
+from bark import Bark
 
 class DogDoor(object):
 	"""docstring for DogDoor"""
 	def __init__(self):
 		self.open = open
+		self.allowedBark = Bark('')
 
 	def isOpen(self):
 		return self.open
@@ -20,3 +21,12 @@ class DogDoor(object):
 		print("The dog door closes")
 		self.open = False
 
+	def setAllowedBark(self, sound):
+		self.allowedBark = Bark(sound)
+	
+	def getAllowedBark(self):
+		return self.allowedBark
+
+door = DogDoor()
+door.setAllowedBark("Woa")
+print(type(door.getAllowedBark()))

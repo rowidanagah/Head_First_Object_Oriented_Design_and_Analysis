@@ -1,4 +1,3 @@
-
 from DogDoor import DogDoor
 
 class BarkRecognizer(object):
@@ -6,8 +5,12 @@ class BarkRecognizer(object):
 	def __init__(self, door):
 		self.door = door
 		
-	def recoginzer(self , bark ):
-
-		# For now it's any random bark will work for us
+	def recoginzer(self , bark ): # Bark obj
+		# For now, any random bark will work for us
 		print("BarkRecognizer  heared a " , bark ) 
-		self.door.Open()
+		lst = door.getAllowedBark();
+		for brk in lst:
+			if brk.equal(bark):
+				self.door.open();
+				return
+		return "this barking, it's not allowed here!"

@@ -12,6 +12,9 @@ class Type(Enum):
 	def __repr__(self):
 		return "{} or {}".format(ACOUSTIC.Title() , ELECTRIC.Title())
 
+class Style(Enum):
+    STYLE1 = "BOLLYWOOD"
+    STYLE2 = "HOLLYWOOD"
 
 class Builder(Enum):
     FENDER = "FENDER"
@@ -38,7 +41,8 @@ class Wood(Enum):
 
 
 class InstrumentSpec:
-	def __init__(self):
+	def __init__(self,builder,type_of, model,backwood, topwood):
+		self.type_of, self.builder, self.model,self.backwood, self.topwood = type_of, builder, model,backwood, topwood
 
 	def getBuilder(self):
 		return self.builder

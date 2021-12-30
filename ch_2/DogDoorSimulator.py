@@ -1,34 +1,30 @@
 from DogDoor import DogDoor
 from Remote import Remote
 from BarkRecognizer import BarkRecognizer
+from bark import Bark
 
 class DogDoorSimulate(object):
 	"""docstring for DogDoorSimulate"""
 	def __init__(self):
 		self.door = DogDoor()
 		self.rec = BarkRecognizer(self.door)
-		# self.remote = Remote(self.door) 
-
+		# self.remote = Remote(self.door)
 
 	def main(self):
-		print("Fido barks to go out side")
-		self.rec.recoginzer("WHO WHOAA")
-		
-		##self.remote.pressButton()
+		barks = ["Bark"+ str(i) for i in range(3)]
+		self.door.setAllowedBark(barks)
+		print(self.door.getAllowedBark())
+		print("Bruce starts barking")
+        #call bark recognizer to recognize the sound
+        self.rec.recoginzer(Bark("Bark1"))
+		return 
 
-		print(self.door.open)
-		print("Fido barks to go outside")
-		print("Fido has gone outside")
-		print("Fido's all done ... ")
-		print("Fido's  back inside ")
+test = DogDoorSimulate()
+test.main()
 
-test_drive = DogDoorSimulate()
-test_drive.main()
 """
-
 To do :
-	1 - specify our dog barks
-	2 - Simulate hardware hearing another bark
-	3 - if our dof get stuck outside
-
+1  specify our dog barks
+2  Simulate hardware hearing another bark
+3  if our dof get stuck outside
 """

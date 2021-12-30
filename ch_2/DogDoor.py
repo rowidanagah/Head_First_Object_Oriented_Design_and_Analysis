@@ -4,8 +4,8 @@ from bark import Bark
 class DogDoor(object):
 	"""docstring for DogDoor"""
 	def __init__(self):
-		self.open = open
-		self.allowedBark = Bark('')
+		self.open = False
+		self.allowedBark = [] # Bark('')
 
 	def isOpen(self):
 		return self.open
@@ -22,11 +22,13 @@ class DogDoor(object):
 		self.open = False
 
 	def setAllowedBark(self, sound):
-		self.allowedBark = Bark(sound)
+		self.allowedBark = [brk for brk in sound]
 	
 	def getAllowedBark(self):
-		return self.allowedBark
+		return [brk for brk in self.allowedBark] if self.allowedBark else "None"
 
+"""
 door = DogDoor()
 door.setAllowedBark("Woa")
 print(type(door.getAllowedBark()))
+"""

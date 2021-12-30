@@ -8,9 +8,14 @@ class BarkRecognizer(object):
 	def recoginzer(self , bark ): # Bark obj
 		# For now, any random bark will work for us
 		print("BarkRecognizer  heared a " , bark ) 
-		lst = door.getAllowedBark();
-		for brk in lst:
+		print([brk for brk in self.door.allowedBark])
+		for brk in self.door.allowedBark:
 			if brk.equal(bark):
+				print("open the door")
 				self.door.open();
 				return
 		return "this barking, it's not allowed here!"
+
+dog = DogDoor()
+rec = BarkRecognizer(dog)
+

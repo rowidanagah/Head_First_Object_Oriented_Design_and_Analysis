@@ -9,6 +9,10 @@ __UML till pg 230__
 It work as a placehoulder for actaul implementation class tok define behavior, *However*
 __subclasses__ implement that behavior.
 
+## Encapsulation
+
+The main objective of it is to protect your classes from unnecessary changes.
+- Just try your hardest to encapsulate what varies.
 
 ### Generalization
 

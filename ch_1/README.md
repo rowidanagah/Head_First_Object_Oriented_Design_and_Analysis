@@ -12,6 +12,6 @@
 4- What is delegation?
 
 A delegation is when an object needs to perform a certain task, and ask a thrid party or another object
-to handle thattask or a part that comsume alot of modificatoins.
+to handle that task or a part that comsume alot of modificatoins.
 
 *Delegation* make code more reusable, make each part worry about its own job or task. 

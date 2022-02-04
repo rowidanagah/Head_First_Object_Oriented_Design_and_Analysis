@@ -16,11 +16,24 @@ The main objective of it is to protect your classes from unnecessary changes.
 
 ### Generalization
 
-used to show that a class extends or inhierts form another class or a more generalized one.
+Used to show that a class extends or inhierts form another class or a more generalized one.
 
 
 ### Aggregation
  
- it's a special form of association to show that onr thhing or class is made up of another class.
+ It's a special form of association to show that onr thhing or class is made up of another class.
 
  
+ ## Notes
+
+- Treat your subclasses as a placeholders for actual implementation. The abs class  *defines* the behavior and subclass *implement* that behavior.
+
+- Diff properties, Use hash map....!
+
+#### What is interface ?
+
+A class that lotsof classees can inheriet common behaviors 
+- Coding to an interface rather than an implementation make your code easyto be extended.
+
+
+ - Classes about the behavior, and the reason that we create subclasses is the diff properties.

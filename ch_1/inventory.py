@@ -11,7 +11,7 @@ class Inventory:
 	def display_guitar(self, gtrs_list = []):
 		if not gtrs_list:
 			"""
-			in ase of we need to displa the whole guitars that we have
+			in case of we need to displa the whole guitars that we have
 			"""
 			gtrs_list = self.guitars_lst
 		n = len(gtrs_list)

@@ -1,4 +1,4 @@
-from guitar import Guitar
+from Guitar import Guitar
 
 class Inventory:
 	def __init__(self):
@@ -11,7 +11,7 @@ class Inventory:
 	def display_guitar(self, gtrs_list = []):
 		if not gtrs_list:
 			"""
-			in case of we need to displa the whole guitars that we have
+			in case of we need to display the whole guitars that we have
 			"""
 			gtrs_list = self.guitars_lst
 		n = len(gtrs_list)
@@ -48,7 +48,7 @@ class Inventory:
 
 	def match(self, gt_1 , customer_gt_2):
 		"""
-		OMG!, i do implemented this func before read the end of this ch and read about 
+		OMG!, i did implement this func before read the end of this ch and read about 
 		Delegation.
 		"""
 		gt , customer_gt = gt_1.get_spec(), customer_gt_2.get_spec()

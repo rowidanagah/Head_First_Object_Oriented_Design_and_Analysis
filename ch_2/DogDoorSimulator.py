@@ -3,21 +3,21 @@ from Remote import Remote
 from BarkRecognizer import BarkRecognizer
 from bark import Bark
 
-class DogDoorSimulate(object):
-	"""docstring for DogDoorSimulate"""
-	def __init__(self):
-		self.door = DogDoor()
-		self.rec = BarkRecognizer(self.door)
-		# self.remote = Remote(self.door)
 
-	def main(self):
-		barks = ["Bark"+ str(i) for i in range(3)]
-		self.door.setAllowedBark(barks)
-		print(self.door.getAllowedBark())
-		print("Bruce starts barking")
-        #call bark recognizer to recognize the sound
-        self.rec.recoginzer(Bark("Bark1"))
-		return 
+class DogDoorSimulate(object):
+    def __init__(self):
+        self.door = DogDoor()
+        self.rec = BarkRecognizer(self.door)
+        # self.remote = Remote(self.door)
+
+    def main(self):
+        barks = [Bark("Bark" + str(i)) for i in range(3)]
+        self.door.setAllowedBark(barks)
+        print("Allowed Barks :> ", self.door.getAllowedBark())
+        print("Bruce starts barking")
+        # call bark recognizer to recognize the sound
+        self.rec.recognize(Bark("Bark1"))
+
 
 test = DogDoorSimulate()
 test.main()
